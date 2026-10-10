@@ -5,7 +5,7 @@ def test_health():
     client = app_module.app.test_client()
     response = client.get("/health")
     assert response.status_code == 200
-    assert response.data.strip() == b"ok"
+    assert response.data.strip() == b"not-ok"
 
 
 def test_home_counts_views(monkeypatch):
